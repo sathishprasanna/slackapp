@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {RestapiService} from '../restapi.service' ;
+
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-channel',
+  templateUrl: './channel.page.html',
+  styleUrls: ['./channel.page.scss'],
 })
-export class HomePage {
-  name:string = 'jey';
-  department:string = "ECE";
-  section:string = "A"
-​
+export class ChannelPage  {
+
   private studentlist ;
   private channels ;
   private slckchnelfrommyslack ;
@@ -45,4 +43,5 @@ export class HomePage {
 ​
   }
 ​
+
 }

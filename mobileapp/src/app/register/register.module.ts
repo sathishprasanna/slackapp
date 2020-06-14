@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ChannelhomePageRoutingModule } from './channelhome-routing.module';
+import { RegisterPageRoutingModule } from './register-routing.module';
 
-import { ChannelhomePage } from './channelhome.page';
+import { RegisterPage } from './register.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ChannelhomePageRoutingModule
+    RegisterPageRoutingModule
   ],
-  declarations: [ChannelhomePage]
+  declarations: [RegisterPage]
 })
-export class ChannelhomePageModule {}
+export class RegisterPageModule {}
