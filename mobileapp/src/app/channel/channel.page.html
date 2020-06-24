@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      channel list
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,37 +9,10 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">channel list</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> 
 ​
-  
-  <div>
-    <ion-list *ngFor="let student of studentlist" >
-      <ion-row>
-        <ion-col>
-      <ion-item color="primary">
-        <ion-label>{{student.name}}</ion-label>
-      </ion-item>
-        </ion-col>
-        <ion-col>
-          <ion-item color="primary" >
-            <ion-label>{{student.department}}</ion-label>
-          </ion-item>
-            </ion-col>
-            <ion-col>
-              <ion-item>
-                <ion-label>{{student.section}}</ion-label>
-              </ion-item>
-                </ion-col>
-​
-    </ion-row>
-    </ion-list>
-  </div>
-​
-  <div>
-      <ion-button size="large" (click)='navigate()'>Large</ion-button>
-  </div>
 <!--
   <ion-row *ngFor="let channel of channels" >
     <ion-col>
@@ -63,40 +36,31 @@
   </ion-item>
   </ion-row>
 -->
-<ion-row *ngFor="let channel of slckchnelfrommyslack.channels" >
-  <ion-col>
-    <ion-item  lines="none" (click)="gotnextpage(channel.id)" >
-   <ion-thumbnail slot="start">
-      <img src='/assets/slack.png'>
-    </ion-thumbnail>
-    
-    <ion-label>
-      <h3>{{ channel.id | uppercase }}</h3>
-      <p>{{ channel.name}}</p>
-      <p>{{ channel.purpose.value}}</p>
-      <p>{{ channel.topic.value}}</p>
-        
-    </ion-label>
-​
-  </ion-item>
-  <ion-row *ngFor="let member of channel.members" >
+
+  <ion-row *ngFor="let member of channels" >
+    <ion-col>
+        <img src='assets/slack.png'>
+    </ion-col>
     <ion-col>
       <ion-item>
-        <h3>{{ member }}</h3>
+        <h3>{{ member.id}}</h3>
       </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <h3>{{ member.name}}</h3>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-button (click)='gotnextpage(member.id)' expand="block" >go to my channel page</ion-button>
+      </ion-item>
+      
+​
     </ion-col>
 ​
   </ion-row>
   
-</ion-col>
-<ion-item>
-  <ion-col>
-    <ion-button (click)='gotnextpage(channel.name)' expand="block" >go to my channel page</ion-button>
-​
-  </ion-col>
-  
-</ion-item>
-​
-</ion-row>
+
  
 </ion-content>

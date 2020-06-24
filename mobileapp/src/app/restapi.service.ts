@@ -1,31 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { identifierModuleUrl } from '@angular/compiler';
 ​
 @Injectable({
   providedIn: 'root'
 })
 export class RestapiService {
 ​
-  strurl:string = "http://localhost:8081/studentlsit" ;
+  
 ​
-  strslackurl:string = "http://localhost:8081/allchanel" ;
+  strslackurl:string = "http://localhost:8082/allchanel" ;
 ​
-  slackurl:string = "https://slack.com/api/channels.list?token=xoxb-514915302310-1148002808389-L8KTQHajr4z3IFi3e5ynXigp";
+
 ​
 ​
   constructor(private httpClient: HttpClient ) { }
 ​
- public getStudents(){
-   return this.httpClient.get(this.strurl);
- }
-​
  public getChannelsFromSlack(){
   return this.httpClient.get(this.strslackurl);
 }
+    
+ public getchanneldetail(id){
+   var url="http://localhost:8082/channeldetail/" +id;
+   return this.httpClient.get(url);
+ }
 ​
-public  slackchannel(){
-​
-  return this.httpClient.get(this.slackurl);
-​
-}
+
 }

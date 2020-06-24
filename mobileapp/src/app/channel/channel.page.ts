@@ -9,37 +9,29 @@ import {RestapiService} from '../restapi.service' ;
 })
 export class ChannelPage  {
 
-  private studentlist ;
+
   private channels ;
   private slckchnelfrommyslack ;
   constructor(private route: Router , private restapi: RestapiService) {
 ​
-    this.restapi.getStudents().subscribe( (response ) => {
-      console.log( response );
-      this.studentlist = response;
-    });
+    
 ​
     this.restapi.getChannelsFromSlack().subscribe( (response ) => {
       console.log( response );
       this.channels = response;
-    });
-​
-    this.restapi.slackchannel().subscribe( (response ) => {
-      console.log( 'data from slack' );
-​
-      console.log( response );
-      this.slckchnelfrommyslack = response;
-    });
-    
+    }); 
 ​
   }
 ​
   navigate(){
     console.log('button clicked');
-   this.route.navigate(['/about', {  }]); 
+   this.route.navigate(['/channeldetail', {  }]); 
     
   }
   gotnextpage(id){
+    console.log('button clicked');
+    this.route.navigate(['/channeldetail', {  }]); 
+     
 ​
   }
 ​

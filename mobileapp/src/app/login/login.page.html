@@ -7,23 +7,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form>
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-
-    <ion-item lines="full">
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
-
-    <ion-row>
-      <ion-col>
-        <ion-button [routerLink]="['/channel']" color="danger" expand="block">Sign In</ion-button>
-        <a [routerLink]="['/forgotpassword']" class="small-text">Forgot Password?</a>
-      </ion-col>
-    </ion-row>
-  </form>
+<ion-content> 
+  <form #form="ngForm" (ngSubmit)="login()"> 
+    <div padding> 
+      <ion-item> 
+        <ion-label position="floating"> <ion-icon name="person-add-outline"></ion-icon> Username</ion-label> 
+        <ion-input name="userid" [(ngModel)]="userid" type="text" ngModel required></ion-input> 
+      </ion-item> 
+      <ion-item> 
+        <ion-label position="floating"> <ion-icon name="key-outline"></ion-icon> password</ion-label> 
+        <ion-input name="password" [(ngModel)]="password" type="password" ngModel required></ion-input> 
+      </ion-item> 
+      <ion-button [routerLink]="['/channel']" expand="block" color="danger">Log In</ion-button>
+    </div> 
+  </form> 
 </ion-content>

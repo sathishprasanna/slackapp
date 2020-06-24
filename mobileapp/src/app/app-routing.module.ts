@@ -20,8 +20,26 @@ const routes: Routes = [
     loadChildren: () => import('./forgotpassword/forgotpassword.module').then( m => m.ForgotpasswordPageModule)
   },
   {
+    path: '',
+    redirectTo: 'channel',
+    pathMatch: 'full'
+  },
+  {
     path: 'channel',
     loadChildren: () => import('./channel/channel.module').then( m => m.ChannelPageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'channeldetail',
+    pathMatch: 'full'
+  },
+  {
+    path: 'channeldetail',
+    loadChildren: () => import('./channeldetail/channeldetail.module').then( m => m.ChanneldetailPageModule)
+  },
+  {
+    path: 'channeldetail',
+    loadChildren: () => import('./channeldetail/channeldetail.module').then( m => m.ChanneldetailPageModule)
   },
  
   
