@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router , NavigationExtras} from '@angular/router';
 import {RestapiService} from '../restapi.service' ;
 
 @Component({
@@ -25,12 +25,11 @@ export class ChannelPage  {
 ​
   navigate(){
     console.log('button clicked');
-   this.route.navigate(['/channeldetail', {  }]); 
-    
+   
   }
   gotnextpage(id){
     console.log('button clicked');
-    this.route.navigate(['/channeldetail', {  }]); 
+    this.route.navigate(['/channeldetail'], {queryParams:{channelid:id||'Default'}}); 
      
 ​
   }
