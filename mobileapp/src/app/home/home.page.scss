@@ -1,3 +1,16 @@
+.logo-image {
+    display: flex;
+    /*width: 120px;*/
+    max-height: 130px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  ion-content {
+    --background: #93f87e;
+  }
+  [transparent] {
+    --background: transparent;
+  }
 .divider {
     display: flex;
     

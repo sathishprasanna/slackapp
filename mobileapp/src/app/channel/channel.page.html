@@ -1,17 +1,24 @@
-<ion-header [translucent]="true">
+ <ion-header class="ion-no-border">
+  
+  <img class="logo-image" src="../../assets/slack1.svg">
+
+ </ion-header>
+ <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       channel list
     </ion-title>
   </ion-toolbar>
-</ion-header>
+ </ion-header>
 ​
-<ion-content [fullscreen]="true">
+ <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">channel list</ion-title>
     </ion-toolbar>
   </ion-header> 
+  ​
+
 ​
 <!--
   <ion-row *ngFor="let channel of channels" >
@@ -39,7 +46,7 @@
 
   <ion-row *ngFor="let member of channels" >
     <ion-col>
-        <img src='assets/slack.png'>
+        <img src='assets/logo.svg'>
     </ion-col>
     <ion-col>
       <ion-item>
@@ -55,12 +62,6 @@
       <ion-item>
         <ion-button (click)='gotnextpage(member.id)' expand="block" >go to my channel page</ion-button>
       </ion-item>
-      
-​
-    </ion-col>
-​
-  </ion-row>
-  
-
- 
-</ion-content>
+    </ion-col>  
+    </ion-row> 
+     

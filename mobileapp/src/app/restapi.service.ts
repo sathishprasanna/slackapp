@@ -9,7 +9,7 @@ export class RestapiService {
 ​
   
 ​
-  strslackurl:string = "http://localhost:8082/allchanel" ;
+  strslackurl:string = "http://localhost:8081/allchanel" ;
 ​
 
 ​
@@ -21,9 +21,17 @@ export class RestapiService {
 }
     
  public getchanneldetail(id){
-   var url="http://localhost:8082/channeldetail/" +id;
+   var url="http://localhost:8081/channeldetail/" +id;
    return this.httpClient.get(url);
+ }
+ public postMessage(id,msg)
+ {
+     var url = "http://localhost:8082/postmessage/"+id+"/"+msg;
+     //var jsonmsg = {"message":msg};
+     console.log(url);
+     return this.httpClient.get(url);
+ 
+ }
  }
 ​
 
-}

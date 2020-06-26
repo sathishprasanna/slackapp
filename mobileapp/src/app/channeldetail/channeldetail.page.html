@@ -1,7 +1,28 @@
 <ion-header [translucent]="true">
 	<ion-toolbar>
 	  <ion-title>
-		channeldetail
+		CHANNEL INFO
 	  </ion-title>
 	</ion-toolbar>
   </ion-header>
+
+  <ion-content>
+	  <div>
+	  <ion-item>
+		  <ion-label size="large"><h1>{{channelid}}</h1></ion-label>
+		  </ion-item>
+		  <ion-item>
+			  <ion-input placeholder="Enter message" [(ngModel)]='chatmsg'></ion-input>
+			  <ion-button (click)='postmsg()' expand="block" >Post a message</ion-button>
+	  </ion-item>
+	</div>
+
+	<ion-list>
+		<ion-list-header>CHANNEL MEMBERS</ion-list-header>
+			<ion-item *ngFor ="let mem of members">
+				<ion-label>{{mem.name}}</ion-label>
+			</ion-item>
+	</ion-list>
+
+
+  </ion-content>
